@@ -1,0 +1,17 @@
+*.DS_Store
+*.tests/
+*.userprefs
+fquanty/bin/
+test-results/
+
+*.ncrunchsolution
+*.orig
+*.sln.cache
+*.suo
+*.swp
+*.user
+.couchapprc
+bin/
+deploy-debug/_attachments
+deploy/_attachments
+obj/

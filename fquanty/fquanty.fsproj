@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B0830AC-2245-4A6D-8289-78F4D248F43D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>fquanty</RootNamespace>
+    <UsePartialTypes>False</UsePartialTypes>
+    <AssemblyName>fquanty</AssemblyName>
+    <BuildOrder>
+      <BuildOrder>
+        <String>Statistics.fs</String>
+        <String>Gamma.fs</String>
+        <String>Solver.fs</String>
+        <String>UniformDistribution.fs</String>
+        <String>NormalDistribution.fs</String>
+        <String>TimeValueOfMoney.fs</String>
+        <String>Returns.fs</String>
+        <String>MatrixInv.fs</String>
+        <String>DataProviders.fs</String>
+        <String>Portfolio.fs</String>
+      </BuildOrder>
+    </BuildOrder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <ConsolePause>False</ConsolePause>
+    <Tailcalls>False</Tailcalls>
+    <DocumentationFile />
+    <OtherFlags />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <ConsolePause>False</ConsolePause>
+    <Tailcalls>True</Tailcalls>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="FSharp.PowerPack">
+      <HintPath>..\lib\FSharp.PowerPack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="Statistics.fs" />
+    <Compile Include="Gamma.fs" />
+    <Compile Include="UniformDistribution.fs" />
+    <Compile Include="NormalDistribution.fs" />
+    <Compile Include="TimeValueOfMoney.fs" />
+    <Compile Include="Returns.fs" />
+    <Compile Include="Solver.fs" />
+    <Compile Include="MatrixInv.fs" />
+    <Compile Include="DataProviders.fs" />
+    <Compile Include="Portfolio.fs" />
+  </ItemGroup>
+</Project>

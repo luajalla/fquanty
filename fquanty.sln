@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "fquanty", "fquanty\fquanty.fsproj", "{2B0830AC-2245-4A6D-8289-78F4D248F43D}"
+EndProject
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "fquanty.tests", "fquanty.tests\fquanty.tests.fsproj", "{6EEE1BB0-0DC8-43B6-B9E1-C3A5B1ADF380}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B0830AC-2245-4A6D-8289-78F4D248F43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B0830AC-2245-4A6D-8289-78F4D248F43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B0830AC-2245-4A6D-8289-78F4D248F43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B0830AC-2245-4A6D-8289-78F4D248F43D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EEE1BB0-0DC8-43B6-B9E1-C3A5B1ADF380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EEE1BB0-0DC8-43B6-B9E1-C3A5B1ADF380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EEE1BB0-0DC8-43B6-B9E1-C3A5B1ADF380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EEE1BB0-0DC8-43B6-B9E1-C3A5B1ADF380}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = fquanty\fquanty.fsproj
+	EndGlobalSection
+EndGlobal

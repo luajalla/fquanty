@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6EEE1BB0-0DC8-43B6-B9E1-C3A5B1ADF380}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>fquanty.tests</RootNamespace>
+    <UsePartialTypes>False</UsePartialTypes>
+    <AssemblyName>fquanty.tests</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <ConsolePause>False</ConsolePause>
+    <Tailcalls>False</Tailcalls>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <ConsolePause>False</ConsolePause>
+    <Tailcalls>True</Tailcalls>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="FSharp.PowerPack">
+      <HintPath>..\lib\FSharp.PowerPack.dll</HintPath>
+    </Reference>
+    <Reference Include="FsUnit.NUnit">
+      <HintPath>..\lib\FsUnit.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="FsUnitExt.fs" />
+    <Compile Include="StatisticsTests.fs" />
+    <Compile Include="DistributionsTests.fs" />
+    <Compile Include="TVMTests.fs" />
+    <Compile Include="DataTests.fs" />
+    <Compile Include="ReturnsTests.fs" />
+    <Compile Include="PortfolioTests.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\fquanty\fquanty.fsproj">
+      <Project>{2B0830AC-2245-4A6D-8289-78F4D248F43D}</Project>
+      <Name>fquanty</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
