@@ -39,6 +39,12 @@ Currently the library contains the following functions:
 		- treynor ratio
 		- sortino ratio
 		- Value-at-Risk
+	- Performance.Bootstrapping
+		- randomize
+		- bootstrap
+		- bootstrapMean
+		- bootstrapStd
+		- boostrapVaR
     - Data Providers
 		- fetch Yahoo quotes
 		- fetch Google quotes
