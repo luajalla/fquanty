@@ -52,6 +52,7 @@
     <Compile Include="DataTests.fs" />
     <Compile Include="ReturnsTests.fs" />
     <Compile Include="PortfolioTests.fs" />
+    <Compile Include="BootstrappingTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\fquanty\fquanty.fsproj">

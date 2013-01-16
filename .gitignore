@@ -1,5 +1,4 @@
 *.DS_Store
-*.tests/
 *.userprefs
 fquanty/bin/
 test-results/

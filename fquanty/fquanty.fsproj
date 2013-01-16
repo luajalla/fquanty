@@ -65,5 +65,6 @@
     <Compile Include="MatrixInv.fs" />
     <Compile Include="DataProviders.fs" />
     <Compile Include="Portfolio.fs" />
+    <Compile Include="Bootstrapping.fs" />
   </ItemGroup>
 </Project>
