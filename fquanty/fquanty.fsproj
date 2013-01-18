@@ -21,7 +21,8 @@
         <String>Returns.fs</String>
         <String>MatrixInv.fs</String>
         <String>DataProviders.fs</String>
-        <String>Portfolio.fs</String>
+        <String>Portfolio.fs</String>  
+		<String>Bootstrapping.fs</String>
       </BuildOrder>
     </BuildOrder>
   </PropertyGroup>
@@ -56,12 +57,12 @@
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" />
   <ItemGroup>
     <Compile Include="Statistics.fs" />
-    <Compile Include="Gamma.fs" />
+    <Compile Include="Gamma.fs" />  
+    <Compile Include="Solver.fs" /> 
     <Compile Include="UniformDistribution.fs" />
     <Compile Include="NormalDistribution.fs" />
     <Compile Include="TimeValueOfMoney.fs" />
     <Compile Include="Returns.fs" />
-    <Compile Include="Solver.fs" />
     <Compile Include="MatrixInv.fs" />
     <Compile Include="DataProviders.fs" />
     <Compile Include="Portfolio.fs" />
