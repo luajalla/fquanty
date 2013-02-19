@@ -1,9 +1,11 @@
 namespace FQuanty
 
+open System
+
 module NormalDistribution =
     [<Literal>]
     let sqrt2PI = 2.5066282746310005024157652848110452530069867406099383
-     
+    
     // helper function                    
     let private dtq log_p lower_tail p = 
         match log_p, lower_tail with
@@ -12,9 +14,11 @@ module NormalDistribution =
             | _, true -> p
             | _ -> 1. - p
 
+    // density function
     let dnorm x mean sd =
         1./(sqrt2PI * sd) * exp (-(x-mean)*(x-mean)/(2.*sd*sd))
         
+    // quantile
     let qnorm p mu sigma lower_tail log_p =
        let p_ = dtq log_p lower_tail p
        let q = p_ - 0.5
@@ -50,5 +54,23 @@ module NormalDistribution =
 
        mu + sigma * (if q < 0. then -v else v)
 
-
     let quantile p = qnorm p 0. 1. true false   
+    
+    // gaussian random number generator
+    let rec private gaussianRand (rand: Random) =
+        let v1 = rand.NextDouble() * 2. - 1.
+        let v2 = rand.NextDouble() * 2. - 1.        
+        let s = v1*v1 + v2*v2
+        if s >= 1. then gaussianRand rand
+        else v1 * sqrt(-2. * log s / s)    
+    
+    // normal random number generator
+    let internal rnormWith rand n mean sd =
+        if n < 1 || sd <= 0. then Seq.empty
+        else 
+            Seq.init n (fun _ -> mean + gaussianRand rand * sd)
+    
+    let private rand = System.Random()
+    
+    let rnorm n mean sd = rnormWith rand n mean sd
+    

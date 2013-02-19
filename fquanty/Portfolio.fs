@@ -66,4 +66,18 @@ module Portfolio =
     let VaRportfolio p rets cc =
         let m, s = Seq.average rets, std rets false
         VaR p 1. m s cc
+    
+    
+    open FQuanty.NormalDistribution
+    
+    // Monte Carlo simulation
+    let internal monteCarloWith rand rets n =
+        let mean, sd = Seq.average rets, std rets false
+        let sample() = rnorm 1 mean sd |> Seq.head
+        Seq.init n (fun _ -> sample())
+    
+    // default module random
+    let private rand = System.Random()
+    
+    let monteCarlo rets n = monteCarloWith rand rets n
         

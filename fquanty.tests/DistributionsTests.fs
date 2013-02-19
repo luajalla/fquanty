@@ -69,10 +69,18 @@ module DistributionsTests =
         qnorm 0.95 0.5 0.1 true false |> should approxEqual 0.664485363
         
     [<Test>]
-    let ``normal distirbution standartized quantile``() =
+    let ``normal distribution standartized quantile``() =
         quantile 0.05 |> should approxEqual -1.644853627
         quantile 0.50 |> should approxEqual  0.000000000
         quantile 0.72 |> should approxEqual  0.582841507
         quantile 0.95 |> should approxEqual  1.644853627         
 
+    [<Test>]
+    let ``normally distributed random numbers``() =
+        let rand = System.Random 42
+        let xs = rnormWith rand 10000 1.0 0.5
+        Seq.average xs |> should (equalWithin 0.01) 1.0
+        std xs false   |> should (equalWithin 0.01) 0.5
+        
+        
         

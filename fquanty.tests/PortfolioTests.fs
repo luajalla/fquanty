@@ -66,5 +66,17 @@ module PortfolioTests =
         
     [<Test>]
     let ``Sortino Ratio with min = rf``() =
-        sortinoRatio pfRets rf |> should approxEqual 0.212132    
+        sortinoRatio pfRets rf |> should approxEqual 0.212132
     
+    [<Test>]
+    let ``Monte Carlo simulation mean should be close to expected``() =
+        let rand = System.Random 42
+        let simulation = monteCarloWith rand pfRets 100
+        Seq.average simulation |> should (equalWithin 0.01) 0.04
+    
+    [<Test>]
+    let ``Monte Carlo simulation std should be close to expected``() =
+        let rand = System.Random 42
+        let simulation = monteCarloWith rand pfRets 100
+        std simulation false |> should (equalWithin 0.01) 0.0163299               
+  

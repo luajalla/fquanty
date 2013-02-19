@@ -32,7 +32,7 @@ module DataProviders =
         reader.ReadToEnd()  
  
 
-    let inline tryParse< ^a when ^a: (static member TryParse: string * byref < ^a > -> bool)> str =
+    let inline tryParse str =
         let mutable res = Unchecked.defaultof<_>    
         let ok = (^a: (static member TryParse: string * byref< ^a > -> bool) (str, &res))
         res    

@@ -21,7 +21,7 @@ module UniformDistribution =
 
     // generate n random values
     let runif n a b =
-        if a >= b then Seq.empty
+        if a >= b || n < 1 then Seq.empty
         else 
             Seq.init n (fun _ -> rand.NextDouble() * (b - a) + a)
 

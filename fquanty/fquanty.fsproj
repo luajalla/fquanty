@@ -12,6 +12,7 @@
     <AssemblyName>fquanty</AssemblyName>
     <BuildOrder>
       <BuildOrder>
+        <String>AssemblyInfo.fs</String>
         <String>Statistics.fs</String>
         <String>Gamma.fs</String>
         <String>Solver.fs</String>
@@ -21,8 +22,8 @@
         <String>Returns.fs</String>
         <String>MatrixInv.fs</String>
         <String>DataProviders.fs</String>
-        <String>Portfolio.fs</String>  
-		<String>Bootstrapping.fs</String>
+        <String>Portfolio.fs</String>
+        <String>Bootstrapping.fs</String>
       </BuildOrder>
     </BuildOrder>
   </PropertyGroup>
@@ -56,9 +57,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\FSharp\1.0\Microsoft.FSharp.Targets" />
   <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Statistics.fs" />
-    <Compile Include="Gamma.fs" />  
-    <Compile Include="Solver.fs" /> 
+    <Compile Include="Gamma.fs" />
+    <Compile Include="Solver.fs" />
     <Compile Include="UniformDistribution.fs" />
     <Compile Include="NormalDistribution.fs" />
     <Compile Include="TimeValueOfMoney.fs" />
